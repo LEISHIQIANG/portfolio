@@ -1045,7 +1045,7 @@
                     <span class="text-xs text-gray-400 font-mono tracking-wider" data-zh="作品集 · 2026 更新" data-en="PORTFOLIO · 2026 UPDATE">作品集 · 2026 更新</span>
                 </div>
                 <h1 class="font-outfit text-[2.65rem] sm:text-6xl md:text-7xl font-bold mb-4 tracking-tight sm:tracking-tighter leading-[0.98] sm:leading-tight">
-                    Prescott Nathan Lei <br>
+                    Prescott Nathan <br>
                     <span class="text-white transition-colors duration-500">雷事强</span>
                 </h1>
                 <p class="font-outfit text-base sm:text-2xl text-gray-400 font-light mb-6 border-l-2 border-indigo-500/50 pl-4 leading-relaxed" data-zh="建筑设计助理 / 建筑设计师 (AI数字化转型)" data-en="Architectural Design Assistant (AI &amp; Digital-Empowered)">
@@ -3040,6 +3040,7 @@
                     renderProjects();
                     renderCourses();
                     renderCompanyGalleries();
+                    syncSkillCardHeights();
                     
                     // Update terminal console if open
                     const activeToolIdx = Array.from(document.querySelectorAll('.tool-btn')).findIndex(btn => btn.classList.contains('active-tool'));
@@ -3888,11 +3889,26 @@ class TileStitcher:
 
         function preloadLightboxAround(index) {
             if (!lightboxImages.length) return;
-            const priorityOffsets = [0, 1, -1, 2, -2, 3, -3];
+            const isSmallScreen = window.innerWidth < 768;
+            const priorityOffsets = isSmallScreen ? [0, 1] : [0, 1, -1, 2, -2];
+            const idleOffsets = isSmallScreen ? [-1, 2] : [3, -3];
+
             priorityOffsets.forEach(offset => {
                 const item = lightboxImages[index + offset];
                 if (item) preloadLightboxImage(item.thumbnail);
             });
+
+            const preloadIdle = () => {
+                idleOffsets.forEach(offset => {
+                    const item = lightboxImages[index + offset];
+                    if (item) preloadLightboxImage(item.thumbnail);
+                });
+            };
+            if ('requestIdleCallback' in window) {
+                requestIdleCallback(preloadIdle, { timeout: 1200 });
+            } else {
+                setTimeout(preloadIdle, 800);
+            }
         }
 
         function zoomIn() {
@@ -4162,9 +4178,34 @@ class TileStitcher:
                     grid.offsetHeight;
                     grid.style.opacity = '1';
                     grid.style.transform = 'translateY(0)';
+                    requestAnimationFrame(syncSkillCardHeights);
                 }, 300);
             }
         }
+
+        function syncSkillCardHeights() {
+            const group1 = document.querySelectorAll('#skill-group-1 .glass-card');
+            const group2 = document.querySelectorAll('#skill-group-2 .glass-card');
+            [...group1, ...group2].forEach(card => {
+                card.style.minHeight = '';
+            });
+
+            if (window.innerWidth < 1024) return;
+            const count = Math.min(group1.length, group2.length);
+            for (let i = 0; i < count; i++) {
+                const height = Math.ceil(Math.max(
+                    group1[i].getBoundingClientRect().height,
+                    group2[i].getBoundingClientRect().height
+                ));
+                group1[i].style.minHeight = `${height}px`;
+                group2[i].style.minHeight = `${height}px`;
+            }
+        }
+
+        window.addEventListener('resize', () => {
+            window.clearTimeout(window.__skillHeightTimer);
+            window.__skillHeightTimer = window.setTimeout(syncSkillCardHeights, 120);
+        });
 
 
         // ----------------- ON WINDOW LOAD -----------------
@@ -4188,6 +4229,7 @@ class TileStitcher:
             applyTheme();
 
             loadPortfolio();
+            syncSkillCardHeights();
         };
 
     </script>
