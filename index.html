@@ -2288,7 +2288,7 @@
         <!-- Lightbox Main viewport -->
         <div class="relative flex-1 flex items-center justify-center overflow-hidden cursor-grab active:cursor-grabbing select-none" id="lightbox-viewport">
             <div id="lightbox-loading-spinner" class="absolute h-12 w-12 rounded-full border-2 border-white/10 border-t-indigo-500 animate-spin z-10 hidden"></div>
-            <img id="lightbox-image" class="w-[95vw] h-[82vh] object-contain transform-gpu transition-transform duration-100 ease-out select-none" src="" alt="高清晰设计图纸" draggable="false">
+            <img id="lightbox-image" class="w-[95vw] h-[82vh] object-contain select-none" src="" alt="高清晰设计图纸" draggable="false">
         </div>
         
         <!-- Lightbox Controls -->
@@ -2316,12 +2316,8 @@
                 </button>
             </div>
             
-            <div class="flex flex-col sm:flex-row items-center gap-2 sm:gap-6 justify-between w-full max-w-3xl text-[10px] text-gray-500 font-mono">
+            <div class="flex flex-col sm:flex-row items-center gap-2 sm:gap-6 justify-center w-full max-w-3xl text-[10px] text-gray-500 font-mono">
                 <span data-zh="提示：点击或拖拽可平移，鼠标滚轮可缩放查看高清晰图纸。" data-en="Tips: Drag to pan, scroll to zoom detailed blueprints.">提示：点击或拖拽可平移，鼠标滚轮可缩放查看高清晰图纸。</span>
-                <a id="lightbox-download" href="" download class="text-indigo-400 hover:text-indigo-300 transition-colors flex items-center space-x-1 cursor-pointer">
-                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-                    <span data-zh="下载原始清晰图纸" data-en="Download Raw Blueprint">下载原始清晰图纸</span>
-                </a>
             </div>
         </div>
     </div>
@@ -3872,7 +3868,6 @@ class TileStitcher:
             
             document.getElementById('lightbox-title').innerText = currentLang === 'zh' ? (item.title_zh || "高清晰设计图纸") : (item.title_en || "Blueprint Sheet");
             document.getElementById('lightbox-counter').innerText = `${currentImageIndex + 1} / ${lightboxImages.length}`;
-            document.getElementById('lightbox-download').href = item.thumbnail;
         }
 
         function preloadLightboxImage(src) {
@@ -3911,14 +3906,28 @@ class TileStitcher:
             }
         }
 
-        function zoomIn() {
-            currentZoom = Math.min(currentZoom + 0.5, 12);
+        function getViewportCenter() {
+            const rect = lightboxViewport.getBoundingClientRect();
+            return { x: rect.left + rect.width / 2, y: rect.top + rect.height / 2 };
+        }
+
+        function zoomAt(newZoom, cx, cy) {
+            const vc = getViewportCenter();
+            const ratio = newZoom / currentZoom;
+            currentX = (cx - vc.x) * (1 - ratio) + currentX * ratio;
+            currentY = (cy - vc.y) * (1 - ratio) + currentY * ratio;
+            currentZoom = newZoom;
             updateTransform();
         }
 
+        function zoomIn() {
+            const center = getViewportCenter();
+            zoomAt(Math.min(currentZoom + 0.5, 12), center.x, center.y);
+        }
+
         function zoomOut() {
-            currentZoom = Math.max(currentZoom - 0.5, 0.3);
-            updateTransform();
+            const center = getViewportCenter();
+            zoomAt(Math.max(currentZoom - 0.5, 0.3), center.x, center.y);
         }
 
         function resetZoom() {
@@ -3933,16 +3942,15 @@ class TileStitcher:
             zoomIndicator.innerText = `${Math.round(currentZoom * 100)}%`;
         }
 
-        // Mouse Wheel Zoom
+        // Mouse Wheel Zoom (always centered on screen)
         lightboxViewport.addEventListener('wheel', (e) => {
             e.preventDefault();
+            const center = getViewportCenter();
             const zoomFactor = 0.2;
-            if (e.deltaY < 0) {
-                currentZoom = Math.min(currentZoom + zoomFactor, 12);
-            } else {
-                currentZoom = Math.max(currentZoom - zoomFactor, 0.3);
-            }
-            updateTransform();
+            const newZoom = e.deltaY < 0
+                ? Math.min(currentZoom + zoomFactor, 12)
+                : Math.max(currentZoom - zoomFactor, 0.3);
+            zoomAt(newZoom, center.x, center.y);
         }, { passive: false });
 
         // Mouse Drag to Pan
@@ -3994,9 +4002,10 @@ class TileStitcher:
                     e.touches[0].clientY - e.touches[1].clientY
                 );
                 const factor = dist / touchStartDist;
-                currentZoom = Math.min(Math.max(currentZoom * factor, 0.4), 6);
+                const newZoom = Math.min(Math.max(currentZoom * factor, 0.4), 6);
+                const center = getViewportCenter();
+                zoomAt(newZoom, center.x, center.y);
                 touchStartDist = dist;
-                updateTransform();
             }
         }, { passive: false });
 
