@@ -1,0 +1,340 @@
+{
+    "profile": {
+        "name": "雷事强 (Prescott Nathan Lei)",
+        "title": "建筑设计助理 (AI数字化转型)",
+        "subtitle": "Architectural Design Assistant",
+        "contact": {
+            "phone": "13408529568",
+            "email": "3184854661@qq.com",
+            "address": "成都市青羊区",
+            "hometown": "四川·成都"
+        },
+        "education": {
+            "school": "四川大学锦城学院",
+            "degree": "建筑学 (五年制本科)",
+            "period": "2020.09 — 2025.06",
+            "gpa": "3.48 / 5.00",
+            "ranking": "专业前 5%",
+            "courses": [
+                "建筑设计",
+                "景观设计",
+                "建筑构造",
+                "建筑力学",
+                "建筑物理",
+                "建筑结构选型",
+                "室内设计",
+                "中外建筑史"
+            ]
+        },
+        "summary": "建筑学本科毕业，1 年行业工作经验，主要参与建筑方案设计、报规文本编制、设计表达及项目汇报工作。熟悉建筑方案阶段工作流程，具备良好的建筑设计基础与图纸表达能力。在工作之余持续探索 AI 与数字化在建筑设计中的辅助应用，开发多项 Python、C# 效率工具与 AI 自动化流程，成倍提升日常方案建模、出图与排版效率。具备建筑专业背景与数字化转型思维，关注建筑设计与人工智能融合的提效方向。",
+        "photos": {
+            "avatar": "thumbs/大头照.webp",
+            "full": "thumbs/全身照.webp"
+        }
+    },
+    "academic": [
+        {
+            "id": "大三上博物馆设计",
+            "title": "城市历史博物馆设计",
+            "description": "大三上学期核心设计课。以空间、光影与历史文脉为核心，探索公共文化建筑在现代都市中的精神寄托与动线重构。",
+            "year": "大三上",
+            "images": [
+                {
+                    "original": "学校作品/大三上博物馆设计 (1).jpg",
+                    "thumbnail": "学校作品/thumbs/大三上博物馆设计 (1).webp"
+                },
+                {
+                    "original": "学校作品/大三上博物馆设计 (2).jpg",
+                    "thumbnail": "学校作品/thumbs/大三上博物馆设计 (2).webp"
+                }
+            ]
+        },
+        {
+            "id": "大三下民宿设计",
+            "title": "山地民宿度假村设计",
+            "description": "大三下学期建筑设计。结合复杂地形高差，设计退台式覆土民宿，实现人、建筑与自然山林的和谐共生。",
+            "year": "大三下",
+            "images": [
+                {
+                    "original": "学校作品/大三下民宿设计 (1).png",
+                    "thumbnail": "学校作品/thumbs/大三下民宿设计 (1).webp"
+                },
+                {
+                    "original": "学校作品/大三下民宿设计 (2).png",
+                    "thumbnail": "学校作品/thumbs/大三下民宿设计 (2).webp"
+                }
+            ]
+        },
+        {
+            "id": "大四上城市设计",
+            "title": "TOD城市综合体与街区更新",
+            "description": "大四上学期城市设计课程。聚焦轨道交通枢纽，进行高密度复合街区规划与老城织补，塑造人性化尺度公共空间。",
+            "year": "大四上",
+            "images": [
+                {
+                    "original": "学校作品/大四上城市设计 (1).png",
+                    "thumbnail": "学校作品/thumbs/大四上城市设计 (1).webp"
+                },
+                {
+                    "original": "学校作品/大四上城市设计 (2).png",
+                    "thumbnail": "学校作品/thumbs/大四上城市设计 (2).webp"
+                },
+                {
+                    "original": "学校作品/大四上城市设计 (3).png",
+                    "thumbnail": "学校作品/thumbs/大四上城市设计 (3).webp"
+                },
+                {
+                    "original": "学校作品/大四上城市设计 (4).png",
+                    "thumbnail": "学校作品/thumbs/大四上城市设计 (4).webp"
+                }
+            ]
+        },
+        {
+            "id": "大四上超高层设计",
+            "title": "垂直都市超高层地标设计",
+            "description": "大四上学期超高层建筑设计。应对极端密度挑战，探索巨型核心筒、避难层与垂直绿化的立体化融合方案。",
+            "year": "大四上",
+            "images": [
+                {
+                    "original": "学校作品/大四上超高层设计 (1).png",
+                    "thumbnail": "学校作品/thumbs/大四上超高层设计 (1).webp"
+                },
+                {
+                    "original": "学校作品/大四上超高层设计 (2).png",
+                    "thumbnail": "学校作品/thumbs/大四上超高层设计 (2).webp"
+                },
+                {
+                    "original": "学校作品/大四上超高层设计 (3).png",
+                    "thumbnail": "学校作品/thumbs/大四上超高层设计 (3).webp"
+                },
+                {
+                    "original": "学校作品/大四上超高层设计 (4).png",
+                    "thumbnail": "学校作品/thumbs/大四上超高层设计 (4).webp"
+                },
+                {
+                    "original": "学校作品/大四上超高层设计 (5).png",
+                    "thumbnail": "学校作品/thumbs/大四上超高层设计 (5).webp"
+                }
+            ]
+        },
+        {
+            "id": "大四下社区中心设计",
+            "title": "共享邻里与社区文体中心",
+            "description": "大四下学期建筑设计。打破传统社区中心围墙，设计多功能开放式露台与社会交往界面，激发社区活力。",
+            "year": "大四下",
+            "images": [
+                {
+                    "original": "学校作品/大四下社区中心设计 (1).png",
+                    "thumbnail": "学校作品/thumbs/大四下社区中心设计 (1).webp"
+                },
+                {
+                    "original": "学校作品/大四下社区中心设计 (2).png",
+                    "thumbnail": "学校作品/thumbs/大四下社区中心设计 (2).webp"
+                },
+                {
+                    "original": "学校作品/大四下社区中心设计 (3).png",
+                    "thumbnail": "学校作品/thumbs/大四下社区中心设计 (3).webp"
+                },
+                {
+                    "original": "学校作品/大四下社区中心设计 (4).png",
+                    "thumbnail": "学校作品/thumbs/大四下社区中心设计 (4).webp"
+                }
+            ]
+        }
+    ],
+    "competitions": [
+        {
+            "id": "仙海杯码头设计",
+            "title": "仙海杯水上游客客运码头",
+            "description": "大三下学期全国性设计竞赛。以流线型仿生设计与生态木质构架为特色，探索轻质建筑结构与水体边缘生态的交融。",
+            "tag": "入围作品",
+            "images": [
+                {
+                    "original": "竞赛作品/大三下仙海杯码头设计 (1).png",
+                    "thumbnail": "竞赛作品/thumbs/大三下仙海杯码头设计 (1).webp"
+                },
+                {
+                    "original": "竞赛作品/大三下仙海杯码头设计 (2).png",
+                    "thumbnail": "竞赛作品/thumbs/大三下仙海杯码头设计 (2).webp"
+                },
+                {
+                    "original": "竞赛作品/大三下仙海杯码头设计 (3).png",
+                    "thumbnail": "竞赛作品/thumbs/大三下仙海杯码头设计 (3).webp"
+                },
+                {
+                    "original": "竞赛作品/大三下仙海杯码头设计 (4).png",
+                    "thumbnail": "竞赛作品/thumbs/大三下仙海杯码头设计 (4).webp"
+                }
+            ]
+        },
+        {
+            "id": "正图",
+            "title": "仙海杯客运码头竞标终图",
+            "description": "全景总图、精细剖面与高精度表现图的竞赛大图展示。集中体现了极强的图面排版与视觉张力。",
+            "tag": "竞标全景",
+            "images": [
+                {
+                    "original": "竞赛作品/正图（正式版）.png",
+                    "thumbnail": "竞赛作品/thumbs/正图（正式版）.webp"
+                }
+            ]
+        }
+    ],
+    "professional": [
+        {
+            "id": "东城规划",
+            "title_zh": "东城规划·住宅项目",
+            "title_en": "East City Planning · Residential",
+            "description_zh": "参与东城片区住宅项目的总图方案设计与强排研究，完成产品排布、日照分析及指标核算。",
+            "description_en": "Participated in East City residential master planning, completing product layout, solar analysis, and indicator calculations.",
+            "company_zh": "云石建筑",
+            "company_en": "Yunshi Arch.",
+            "images": [
+                { "original": "工作作品/云石/东城规划1.jpg", "thumbnail": "工作作品/云石/thumbs/东城规划1.webp" },
+                { "original": "工作作品/云石/东城规划2.png", "thumbnail": "工作作品/云石/thumbs/东城规划2.webp" },
+                { "original": "工作作品/云石/东城规划3.png", "thumbnail": "工作作品/云石/thumbs/东城规划3.webp" },
+                { "original": "工作作品/云石/东城规划4.png", "thumbnail": "工作作品/云石/thumbs/东城规划4.webp" }
+            ]
+        },
+        {
+            "id": "公园理想邦",
+            "title_zh": "公园理想邦住宅",
+            "title_en": "Park Utopia Residence",
+            "description_zh": "公园理想邦住宅项目，负责总图强排、方案比选及规划报审阶段的设计表达与文本编制。",
+            "description_en": "Park Utopia residential project — site layout, scheme comparison, and planning submission documentation.",
+            "company_zh": "云石建筑",
+            "company_en": "Yunshi Arch.",
+            "images": [
+                { "original": "工作作品/云石/公园理想邦0.png", "thumbnail": "工作作品/云石/thumbs/公园理想邦0.webp" },
+                { "original": "工作作品/云石/公园理想邦1.jpeg", "thumbnail": "工作作品/云石/thumbs/公园理想邦1.webp" },
+                { "original": "工作作品/云石/公园理想邦2.jpeg", "thumbnail": "工作作品/云石/thumbs/公园理想邦2.webp" },
+                { "original": "工作作品/云石/公园理想邦3.jpeg", "thumbnail": "工作作品/云石/thumbs/公园理想邦3.webp" },
+                { "original": "工作作品/云石/公园理想邦4.jpeg", "thumbnail": "工作作品/云石/thumbs/公园理想邦4.webp" }
+            ]
+        },
+        {
+            "id": "公园瑞玺",
+            "title_zh": "公园瑞玺高层住宅",
+            "title_en": "Park Ruixi High-Rise",
+            "description_zh": "公园瑞玺高层住宅项目方案设计与报规图纸绘制，包括单体平面、立面、剖面等全套技术图纸。",
+            "description_en": "Park Ruixi high-rise residential — schematic design and regulatory drawings including plans, elevations, and sections.",
+            "company_zh": "云石建筑",
+            "company_en": "Yunshi Arch.",
+            "images": [
+                { "original": "工作作品/云石/公园瑞玺0.png", "thumbnail": "工作作品/云石/thumbs/公园瑞玺0.webp" },
+                { "original": "工作作品/云石/公园瑞玺1.png", "thumbnail": "工作作品/云石/thumbs/公园瑞玺1.webp" },
+                { "original": "工作作品/云石/公园瑞玺2.png", "thumbnail": "工作作品/云石/thumbs/公园瑞玺2.webp" },
+                { "original": "工作作品/云石/公园瑞玺3.png", "thumbnail": "工作作品/云石/thumbs/公园瑞玺3.webp" },
+                { "original": "工作作品/云石/公园瑞玺4.png", "thumbnail": "工作作品/云石/thumbs/公园瑞玺4.webp" }
+            ]
+        },
+        {
+            "id": "强排总平",
+            "title_zh": "总图强排与指标控制",
+            "title_en": "Site Layout & Indicators",
+            "description_zh": "高强度总图强排研究与指标控制，在严格日照与退距规范下实现用地价值最大化。",
+            "description_en": "High-intensity site layout planning under strict solar and setback regulations, maximizing land value.",
+            "company_zh": "云石建筑",
+            "company_en": "Yunshi Arch.",
+            "images": [
+                { "original": "工作作品/云石/强排总平1.jpg", "thumbnail": "工作作品/云石/thumbs/强排总平1.webp" },
+                { "original": "工作作品/云石/强排总平2.png", "thumbnail": "工作作品/云石/thumbs/强排总平2.webp" },
+                { "original": "工作作品/云石/强排总平3.jpg", "thumbnail": "工作作品/云石/thumbs/强排总平3.webp" }
+            ]
+        },
+        {
+            "id": "户型彩平图",
+            "title_zh": "住宅户型彩平图集",
+            "title_en": "Residential Unit Plans",
+            "description_zh": "多种住宅户型彩平图表达，涵盖标准层平面、复式及顶层公寓等多种户型类型。",
+            "description_en": "Colored residential unit plans covering standard floors, duplexes, and penthouse apartment types.",
+            "company_zh": "云石建筑",
+            "company_en": "Yunshi Arch.",
+            "images": [
+                { "original": "工作作品/云石/户型彩平图 (1).png", "thumbnail": "工作作品/云石/thumbs/户型彩平图 (1).webp" },
+                { "original": "工作作品/云石/户型彩平图 (2).png", "thumbnail": "工作作品/云石/thumbs/户型彩平图 (2).webp" },
+                { "original": "工作作品/云石/户型彩平图 (3).png", "thumbnail": "工作作品/云石/thumbs/户型彩平图 (3).webp" },
+                { "original": "工作作品/云石/户型彩平图 (4).png", "thumbnail": "工作作品/云石/thumbs/户型彩平图 (4).webp" },
+                { "original": "工作作品/云石/户型彩平图 (5).png", "thumbnail": "工作作品/云石/thumbs/户型彩平图 (5).webp" },
+                { "original": "工作作品/云石/户型彩平图 (6).png", "thumbnail": "工作作品/云石/thumbs/户型彩平图 (6).webp" }
+            ]
+        },
+        {
+            "id": "技术图纸",
+            "title_zh": "方案技术图纸详图",
+            "title_en": "Technical Construction Details",
+            "description_zh": "方案阶段全套技术图纸，包括住宅单体平立剖、墙身大样及节点详图。",
+            "description_en": "Full technical drawing set for schematic design — plans, elevations, sections, and construction details.",
+            "company_zh": "云石建筑",
+            "company_en": "Yunshi Arch.",
+            "images": [
+                { "original": "工作作品/云石/技术图纸0.jpg", "thumbnail": "工作作品/云石/thumbs/技术图纸0.webp" },
+                { "original": "工作作品/云石/技术图纸1.jpg", "thumbnail": "工作作品/云石/thumbs/技术图纸1.webp" },
+                { "original": "工作作品/云石/技术图纸2.jpg", "thumbnail": "工作作品/云石/thumbs/技术图纸2.webp" },
+                { "original": "工作作品/云石/技术图纸3.jpg", "thumbnail": "工作作品/云石/thumbs/技术图纸3.webp" }
+            ]
+        },
+        {
+            "id": "金域蓝湾",
+            "title_zh": "金域蓝湾滨水住宅",
+            "title_en": "Golden Bay Waterfront",
+            "description_zh": "金域蓝湾滨水住宅项目，负责总图方案设计与效果图渲染表现。",
+            "description_en": "Golden Bay waterfront residential — master planning and architectural visualization.",
+            "company_zh": "云石建筑",
+            "company_en": "Yunshi Arch.",
+            "images": [
+                { "original": "工作作品/云石/金域蓝湾0.png", "thumbnail": "工作作品/云石/thumbs/金域蓝湾0.webp" },
+                { "original": "工作作品/云石/金域蓝湾2.jpeg", "thumbnail": "工作作品/云石/thumbs/金域蓝湾2.webp" },
+                { "original": "工作作品/云石/金域蓝湾3.jpeg", "thumbnail": "工作作品/云石/thumbs/金域蓝湾3.webp" },
+                { "original": "工作作品/云石/金域蓝湾4.jpeg", "thumbnail": "工作作品/云石/thumbs/金域蓝湾4.webp" }
+            ]
+        },
+        {
+            "id": "下汤博物馆",
+            "title_zh": "下汤遗址博物馆方案",
+            "title_en": "Xiatang Heritage Museum",
+            "description_zh": "下汤遗址博物馆方案设计，参与概念推敲、模型搭建及汇报文件制作。",
+            "description_en": "Xiatang Heritage Museum schematic design — concept development, modeling, and presentation.",
+            "company_zh": "悉地国际",
+            "company_en": "CCDI",
+            "images": [
+                { "original": "工作作品/悉地/下汤博物馆0.png", "thumbnail": "工作作品/悉地/thumbs/下汤博物馆0.webp" },
+                { "original": "工作作品/悉地/下汤博物馆1.png", "thumbnail": "工作作品/悉地/thumbs/下汤博物馆1.webp" },
+                { "original": "工作作品/悉地/下汤博物馆2.png", "thumbnail": "工作作品/悉地/thumbs/下汤博物馆2.webp" },
+                { "original": "工作作品/悉地/下汤博物馆3.png", "thumbnail": "工作作品/悉地/thumbs/下汤博物馆3.webp" },
+                { "original": "工作作品/悉地/下汤博物馆4.png", "thumbnail": "工作作品/悉地/thumbs/下汤博物馆4.webp" }
+            ]
+        },
+        {
+            "id": "西昌",
+            "title_zh": "西昌地区项目",
+            "title_en": "Xichang Regional Project",
+            "description_zh": "西昌地区项目设计，参与城市设计研究、案例分析与方案图纸绘制。",
+            "description_en": "Xichang regional project — urban design research, case study analysis, and schematic drawing.",
+            "company_zh": "悉地国际",
+            "company_en": "CCDI",
+            "images": [
+                { "original": "工作作品/悉地/西昌 (1).png", "thumbnail": "工作作品/悉地/thumbs/西昌 (1).webp" },
+                { "original": "工作作品/悉地/西昌 (2).png", "thumbnail": "工作作品/悉地/thumbs/西昌 (2).webp" },
+                { "original": "工作作品/悉地/西昌 (3).jpg", "thumbnail": "工作作品/悉地/thumbs/西昌 (3).webp" },
+                { "original": "工作作品/悉地/西昌 (4).jpg", "thumbnail": "工作作品/悉地/thumbs/西昌 (4).webp" }
+            ]
+        },
+        {
+            "id": "黎明胡详规",
+            "title_zh": "黎明湖片区详细规划",
+            "title_en": "Liming Lake Detail Planning",
+            "description_zh": "黎明湖片区详细规划项目，协助完成规划图纸绘制、指标统计与汇报排版。",
+            "description_en": "Liming Lake detailed planning — planning drawings, indicator statistics, and presentation layout.",
+            "company_zh": "悉地国际",
+            "company_en": "CCDI",
+            "images": [
+                { "original": "工作作品/悉地/黎明胡详规 (1).png", "thumbnail": "工作作品/悉地/thumbs/黎明胡详规 (1).webp" },
+                { "original": "工作作品/悉地/黎明胡详规 (2).png", "thumbnail": "工作作品/悉地/thumbs/黎明胡详规 (2).webp" },
+                { "original": "工作作品/悉地/黎明胡详规 (3).png", "thumbnail": "工作作品/悉地/thumbs/黎明胡详规 (3).webp" },
+                { "original": "工作作品/悉地/黎明胡详规 (4).png", "thumbnail": "工作作品/悉地/thumbs/黎明胡详规 (4).webp" },
+                { "original": "工作作品/悉地/黎明胡详规 (5).png", "thumbnail": "工作作品/悉地/thumbs/黎明胡详规 (5).webp" }
+            ]
+        }
+    ]
+}
