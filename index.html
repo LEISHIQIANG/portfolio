@@ -719,36 +719,37 @@
         }
 
         body.light-theme {
-            background-color: #f5f3ed !important;
-            color: #111827 !important;
+            background-color: #fbfaf6 !important;
+            color: #172033 !important;
         }
 
         body.light-theme.bg-grid {
             background-image:
-                radial-gradient(circle at 50% 10%, #fffdfa 0%, #f5f3ed 52%, #e9e4d8 100%),
-                linear-gradient(to right, rgba(55, 65, 81, 0.055) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(55, 65, 81, 0.055) 1px, transparent 1px),
-                linear-gradient(to right, rgba(55, 65, 81, 0.018) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(55, 65, 81, 0.018) 1px, transparent 1px);
+                radial-gradient(circle at 50% 8%, rgba(236, 253, 245, 0.95) 0%, rgba(248, 253, 250, 0.9) 34%, #fbfaf6 78%, #f3efe7 100%),
+                linear-gradient(to right, rgba(100, 116, 139, 0.038) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(100, 116, 139, 0.038) 1px, transparent 1px),
+                linear-gradient(to right, rgba(14, 165, 233, 0.012) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(14, 165, 233, 0.012) 1px, transparent 1px);
         }
 
         body.light-theme .text-gray-400,
         body.light-theme .text-gray-500,
         body.light-theme .dark-desc,
         body.light-theme p {
-            color: #374151 !important;
+            color: #465568 !important;
         }
 
         body.light-theme .text-indigo-400,
         body.light-theme .text-indigo-300,
         body.light-theme .text-cyan-400,
         body.light-theme .text-cyan-300 {
-            color: #075985 !important;
+            color: #0f7f91 !important;
         }
 
         body.light-theme .glass-card {
-            background: rgba(255, 255, 255, 0.78) !important;
-            border-color: rgba(17, 24, 39, 0.12) !important;
+            background: rgba(255, 255, 255, 0.66) !important;
+            border-color: rgba(100, 116, 139, 0.14) !important;
+            box-shadow: 0 14px 34px rgba(31, 41, 55, 0.055) !important;
         }
 
         body.light-theme nav .font-outfit {
@@ -760,8 +761,8 @@
         }
 
         body.light-theme nav {
-            background: rgba(245, 243, 237, 0.88) !important;
-            border-bottom-color: rgba(17, 24, 39, 0.12) !important;
+            background: rgba(251, 250, 246, 0.86) !important;
+            border-bottom-color: rgba(100, 116, 139, 0.12) !important;
         }
 
         body.light-theme button,
@@ -773,27 +774,28 @@
 
         body.light-theme a.bg-gradient-to-r,
         body.light-theme .bg-gradient-to-r.from-indigo-500 {
-            background: linear-gradient(135deg, #0f172a, #0369a1) !important;
-            color: #ffffff !important;
-            box-shadow: 0 12px 28px rgba(15, 23, 42, 0.18) !important;
+            background: linear-gradient(135deg, #dff7ef, #dceeff) !important;
+            border: 1px solid rgba(14, 116, 144, 0.18) !important;
+            color: #0f3f4a !important;
+            box-shadow: 0 12px 28px rgba(14, 116, 144, 0.12) !important;
         }
 
         body.light-theme a.bg-white\/5,
         body.light-theme button.bg-white\/5 {
-            background: rgba(255, 255, 255, 0.64) !important;
-            border-color: rgba(17, 24, 39, 0.18) !important;
-            color: #111827 !important;
+            background: rgba(255, 255, 255, 0.58) !important;
+            border-color: rgba(100, 116, 139, 0.18) !important;
+            color: #243044 !important;
         }
 
         body.light-theme .photo-overlay-badge {
             background: rgba(255, 255, 255, 0.88) !important;
-            border-color: rgba(17, 24, 39, 0.14) !important;
+            border-color: rgba(100, 116, 139, 0.14) !important;
         }
 
         body.light-theme .company-stats-panel,
         body.light-theme .company-metric-card {
-            background: rgba(255, 255, 255, 0.72) !important;
-            border-color: rgba(17, 24, 39, 0.12) !important;
+            background: rgba(255, 255, 255, 0.58) !important;
+            border-color: rgba(100, 116, 139, 0.13) !important;
         }
 
         body.light-theme .bg-black\/60,
@@ -809,12 +811,49 @@
         body.light-theme .company-metric-card .text-cyan-300 {
             background: transparent !important;
             border-color: transparent !important;
-            color: #4338ca !important;
+            color: #0f7f91 !important;
         }
 
         body.light-theme .glass-card .text-xl.font-bold.text-cyan-300,
         body.light-theme .company-metric-card .text-cyan-300 {
-            color: #0369a1 !important;
+            color: #0e7490 !important;
+        }
+
+        body.light-theme .notch-block.active-indigo,
+        body.light-theme .notch-block.active-emerald {
+            background: linear-gradient(135deg, #7dd3fc, #86efac) !important;
+            box-shadow: 0 0 8px rgba(20, 184, 166, 0.18) !important;
+        }
+
+        body.light-theme .notch-block.inactive {
+            background: rgba(148, 163, 184, 0.14) !important;
+        }
+
+        body.light-theme .bg-indigo-500\/10,
+        body.light-theme .bg-cyan-500\/10,
+        body.light-theme .bg-emerald-500\/10 {
+            background-color: rgba(236, 253, 245, 0.72) !important;
+        }
+
+        body.light-theme .border-indigo-500\/20,
+        body.light-theme .border-cyan-500\/20,
+        body.light-theme .border-emerald-500\/20 {
+            border-color: rgba(20, 184, 166, 0.2) !important;
+        }
+
+        body.light-theme .skill-filter-btn.active,
+        body.light-theme .filter-tag.active,
+        body.light-theme .filter-tag.bg-indigo-500 {
+            background: linear-gradient(135deg, rgba(236, 253, 245, 0.9), rgba(224, 242, 254, 0.9)) !important;
+            color: #0f3f4a !important;
+            border-color: rgba(14, 116, 144, 0.22) !important;
+            box-shadow: 0 8px 18px rgba(14, 116, 144, 0.08) !important;
+        }
+
+        body.light-theme .glass-card .text-rose-400 {
+            color: #be6a7a !important;
+            background-color: rgba(255, 241, 242, 0.62) !important;
+            border-color: rgba(244, 114, 182, 0.16) !important;
         }
 
         body:not(.light-theme) nav .font-outfit {
