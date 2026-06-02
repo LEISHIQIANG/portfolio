@@ -1,6 +1,4 @@
 # Keep the GitHub Pages build small. The site displays WebP thumbnails.
 *.png
-*.jpg
-*.jpeg
 *.wdp
 

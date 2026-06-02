@@ -4143,10 +4143,43 @@ class TileStitcher:
         function updateLightboxContent() {
             const item = lightboxImages[currentImageIndex];
             const thumbSrc = item.thumbnail;
+            const originalSrc = item.original || item.thumbnail;
+            const cachedOriginal = lightboxImageCache.get(originalSrc);
             
-            lightboxImg.src = thumbSrc;
-            lightboxImg.style.filter = '';
-            spinner.classList.add('hidden');
+            if (cachedOriginal && cachedOriginal.complete && cachedOriginal.naturalWidth > 0) {
+                spinner.classList.add('hidden');
+                lightboxImg.style.filter = '';
+                lightboxImg.src = originalSrc;
+            } else {
+                lightboxImg.src = thumbSrc;
+                lightboxImg.style.filter = '';
+                spinner.classList.remove('hidden');
+                
+                const hiRes = new Image();
+                let loadTimeout = setTimeout(function() {
+                    if (lightboxImages[currentImageIndex] === item) {
+                        spinner.classList.add('hidden');
+                    }
+                }, 15000);
+                
+                hiRes.onload = function() {
+                    clearTimeout(loadTimeout);
+                    if (lightboxImages[currentImageIndex] === item) {
+                        lightboxImg.src = originalSrc;
+                        spinner.classList.add('hidden');
+                    }
+                };
+                hiRes.onerror = function() {
+                    clearTimeout(loadTimeout);
+                    if (lightboxImages[currentImageIndex] === item) {
+                        spinner.classList.add('hidden');
+                    }
+                };
+                hiRes.src = originalSrc;
+                lightboxImageCache.set(originalSrc, hiRes);
+            }
+            
+            preloadLightboxAround(currentImageIndex);
             
             document.getElementById('lightbox-title').innerText = currentLang === 'zh' ? (item.title_zh || "高清晰设计图纸") : (item.title_en || "Blueprint Sheet");
             document.getElementById('lightbox-counter').innerText = `${currentImageIndex + 1} / ${lightboxImages.length}`;
@@ -4154,7 +4187,7 @@ class TileStitcher:
 
         function preloadLightboxImage(item) {
             if (!item) return;
-            const src = item.thumbnail;
+            const src = item.original || item.thumbnail;
             if (!src || lightboxImageCache.has(src)) return;
             const img = new Image();
             img.decoding = 'async';
