@@ -2895,8 +2895,8 @@
                     "title_en": "Xianhai Cup Tourist Ferry Terminal",
                     "description_zh": "大三下学期全国性设计竞赛。以流线型仿生设计与生态木质构架为特色，探索轻质建筑结构与水体边缘生态的交融。",
                     "description_en": "National design competition in Junior Spring. Featuring biophilic design and timber framing structures, exploring lightweight pavilion interventions along water edges.",
-                    "tag_zh": "入围作品",
-                    "tag_en": "Shortlisted Work",
+                    "tag_zh": "二等奖作品",
+                    "tag_en": "2nd Prize",
                     "images": [
                         {
                             "original": "竞赛作品/大三下仙海杯码头设计 (1).png",
@@ -2922,8 +2922,8 @@
                     "title_en": "Urban Garden Construction Competition - Final Sheet",
                     "description_zh": "城市花园建造竞赛正式提交终图，整合场地总平面、关键剖面与景观效果图，以清晰的图面逻辑呈现从空间组织到植物配置的完整设计推演。",
                     "description_en": "Final submission for the Urban Garden Construction Competition, integrating site plan, key sections, and landscape renderings to present a complete design narrative from spatial organization to planting configuration.",
-                    "tag_zh": "竞赛终图",
-                    "tag_en": "Competition Final",
+                    "tag_zh": "入围作品",
+                    "tag_en": "Shortlisted Work",
                     "images": [
                         {
                             "original": "竞赛作品/正图（正式版）.png",
@@ -3204,13 +3204,13 @@
                 const docText = currentLang === 'zh' ? `${item.images.length} 张图纸` : `${item.images.length} Sheets`;
                 const meta = getProfessionalProjectMeta(item);
                 const accent = item.company_zh === '悉地国际' ? 'cyan' : 'indigo';
-                const accentClass = accent === 'cyan' ? 'text-cyan-300 border-cyan-500/20 bg-cyan-500/10' : 'text-indigo-300 border-indigo-500/20 bg-indigo-500/10';
+                const accentClass = accent === 'cyan' ? 'bg-white/40 backdrop-blur-sm text-cyan-700 border-cyan-500/30' : 'bg-white/40 backdrop-blur-sm text-indigo-600 border-indigo-500/30';
                 const hoverClass = accent === 'cyan' ? 'group-hover:text-cyan-400' : 'group-hover:text-indigo-400';
                 card.innerHTML = `
                     <div onclick='openProjectLightbox(${JSON.stringify(item.images).replace(/'/g, "\\'")}, "${title.replace(/"/g, '&quot;')}")'>
                         <div class="relative overflow-hidden rounded-xl h-44 mb-4 select-none">
                             <img src="${cover}" alt="${title}" loading="lazy" decoding="async" class="w-full h-full object-cover filter brightness-90 group-hover:scale-105 transition-transform duration-500">
-                            <span class="absolute top-3 left-3 px-2 py-0.5 border rounded-full text-[9px] font-mono font-semibold ${accentClass}">
+                            <span class="absolute top-3 left-3 px-2.5 py-1 border rounded-full text-[9px] font-mono font-semibold ${accentClass}">
                                 ${meta.phase}
                             </span>
                             <span class="absolute bottom-3 right-3 px-2 py-0.5 bg-black/60 backdrop-blur rounded text-[9px] font-mono text-gray-300">
@@ -3433,13 +3433,13 @@
                 const tagText = currentLang === 'zh' ? (item.year_zh || item.tag_zh) : (item.year_en || item.tag_en);
                 const docText = currentLang === 'zh' ? `${item.images.length} 张图纸` : `${item.images.length} Sheets`;
                 
-                const tagColor = item.type === 'competition' ? 'bg-rose-500/10 text-rose-400 border-rose-500/20' : 'bg-indigo-500/10 text-indigo-400 border-indigo-500/20';
+                const tagColor = item.type === 'competition' ? 'bg-white/40 backdrop-blur-sm text-rose-600 border-rose-500/30' : 'bg-white/40 backdrop-blur-sm text-indigo-600 border-indigo-500/30';
                 
                 card.innerHTML = `
                     <div onclick='openProjectLightbox(${JSON.stringify(item.images).replace(/'/g, "\\'")}, "${title.replace(/"/g, '&quot;')}")'>
                         <div class="relative overflow-hidden rounded-xl h-44 mb-4 select-none">
                             <img src="${cover}" alt="${title}" loading="lazy" decoding="async" fetchpriority="low" class="w-full h-full object-cover filter brightness-90 group-hover:scale-105 transition-transform duration-500" style="opacity:0;transition:opacity 0.4s ease" onload="this.style.opacity=1">
-                            <span class="absolute top-3 left-3 px-2 py-0.5 border rounded-full text-[9px] font-mono font-semibold ${tagColor}">
+                            <span class="absolute top-3 left-3 px-2.5 py-1 border rounded-full text-[9px] font-mono font-semibold ${tagColor}">
                                 ${tagText}
                             </span>
                             <span class="absolute bottom-3 right-3 px-2 py-0.5 bg-black/60 backdrop-blur rounded text-[9px] font-mono text-gray-300">
