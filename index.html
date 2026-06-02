@@ -2551,7 +2551,7 @@
                             </div>
                             
                             <div class="p-4 bg-white/5 border border-white/5 rounded-2xl flex items-center justify-center">
-                                <img src="thumbs/微信.jpg" alt="微信二维码" class="wechat-qr w-24 h-24 rounded-lg object-cover cursor-pointer hover:opacity-80 transition-opacity" onclick="openLightbox([{original:'thumbs/微信.jpg',thumbnail:'thumbs/微信.jpg',title_zh:'微信二维码',title_en:'WeChat QR Code'}], 0)">
+                                <img src="thumbs/wechat.jpg" alt="微信二维码" class="wechat-qr w-24 h-24 rounded-lg object-cover cursor-pointer hover:opacity-80 transition-opacity" onclick="openLightbox([{original:'thumbs/wechat.jpg',thumbnail:'thumbs/wechat.jpg',title_zh:'微信二维码',title_en:'WeChat QR Code'}], 0)">
                             </div>
                         </div>
                     </div>
@@ -4118,11 +4118,44 @@ class TileStitcher:
         function openLightbox(imagesList, index) {
             lightboxImages = imagesList;
             currentImageIndex = index;
-            preloadLightboxAround(currentImageIndex);
-            updateLightboxContent();
             
+            // 立即显示lightbox并加载当前点击的图片
             lightbox.classList.remove('hidden');
             lightbox.classList.add('flex');
+            
+            // 优先加载当前点击的图片
+            const currentItem = lightboxImages[currentImageIndex];
+            if (currentItem) {
+                const src = currentItem.original || currentItem.thumbnail;
+                if (src && !lightboxImageCache.has(src)) {
+                    const img = new Image();
+                    img.decoding = 'async';
+                    img.loading = 'eager';
+                    img.onload = function() {
+                        // 当前图片加载完成后立即更新显示
+                        if (lightboxImages[currentImageIndex] === currentItem) {
+                            lightboxImg.src = src;
+                            lightboxImg.style.filter = '';
+                            spinner.classList.add('hidden');
+                        }
+                    };
+                    img.onerror = function() {
+                        lightboxImageCache.delete(src);
+                    };
+                    img.src = src;
+                    lightboxImageCache.set(src, img);
+                    if (img.decode) {
+                        img.decode().catch(() => {});
+                    }
+                }
+            }
+            
+            updateLightboxContent();
+            
+            // 预加载周围图片
+            setTimeout(() => {
+                preloadLightboxAround(currentImageIndex);
+            }, 100);
             
             // Disable page scrolling safely using Lenis built-in controller
             lenis.stop();
@@ -4147,39 +4180,29 @@ class TileStitcher:
             const cachedOriginal = lightboxImageCache.get(originalSrc);
             
             if (cachedOriginal && cachedOriginal.complete && cachedOriginal.naturalWidth > 0) {
+                // 原图已缓存，直接显示
                 spinner.classList.add('hidden');
                 lightboxImg.style.filter = '';
                 lightboxImg.src = originalSrc;
-            } else {
+            } else if (cachedOriginal && !cachedOriginal.complete) {
+                // 原图正在加载中，显示缩略图并等待
                 lightboxImg.src = thumbSrc;
                 lightboxImg.style.filter = '';
                 spinner.classList.remove('hidden');
                 
-                const hiRes = new Image();
-                let loadTimeout = setTimeout(function() {
-                    if (lightboxImages[currentImageIndex] === item) {
-                        spinner.classList.add('hidden');
-                    }
-                }, 15000);
-                
-                hiRes.onload = function() {
-                    clearTimeout(loadTimeout);
+                cachedOriginal.addEventListener('load', function onLoad() {
+                    cachedOriginal.removeEventListener('load', onLoad);
                     if (lightboxImages[currentImageIndex] === item) {
                         lightboxImg.src = originalSrc;
                         spinner.classList.add('hidden');
                     }
-                };
-                hiRes.onerror = function() {
-                    clearTimeout(loadTimeout);
-                    if (lightboxImages[currentImageIndex] === item) {
-                        spinner.classList.add('hidden');
-                    }
-                };
-                hiRes.src = originalSrc;
-                lightboxImageCache.set(originalSrc, hiRes);
+                });
+            } else {
+                // 没有缓存，显示缩略图
+                lightboxImg.src = thumbSrc;
+                lightboxImg.style.filter = '';
+                spinner.classList.add('hidden');
             }
-            
-            preloadLightboxAround(currentImageIndex);
             
             document.getElementById('lightbox-title').innerText = currentLang === 'zh' ? (item.title_zh || "高清晰设计图纸") : (item.title_en || "Blueprint Sheet");
             document.getElementById('lightbox-counter').innerText = `${currentImageIndex + 1} / ${lightboxImages.length}`;
