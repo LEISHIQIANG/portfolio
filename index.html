@@ -2583,7 +2583,7 @@
         <!-- Lightbox Main viewport -->
         <div class="relative flex-1 flex items-center justify-center overflow-hidden cursor-grab active:cursor-grabbing select-none" id="lightbox-viewport">
             <div id="lightbox-loading-spinner" class="absolute h-12 w-12 rounded-full border-2 border-white/10 border-t-indigo-500 animate-spin z-10 hidden"></div>
-            <img id="lightbox-image" class="w-[95vw] h-[82vh] object-contain select-none" src="" alt="高清晰设计图纸" draggable="false">
+            <img id="lightbox-image" class="w-[95vw] h-[82vh] object-contain select-none" style="transition: filter 0.4s ease-out;" src="" alt="高清晰设计图纸" draggable="false">
         </div>
         
         <!-- Lightbox Controls -->
@@ -3438,7 +3438,7 @@
                 card.innerHTML = `
                     <div onclick='openProjectLightbox(${JSON.stringify(item.images).replace(/'/g, "\\'")}, "${title.replace(/"/g, '&quot;')}")'>
                         <div class="relative overflow-hidden rounded-xl h-44 mb-4 select-none">
-                            <img src="${cover}" alt="${title}" loading="lazy" decoding="async" class="w-full h-full object-cover filter brightness-90 group-hover:scale-105 transition-transform duration-500">
+                            <img src="${cover}" alt="${title}" loading="lazy" decoding="async" fetchpriority="low" class="w-full h-full object-cover filter brightness-90 group-hover:scale-105 transition-transform duration-500" style="opacity:0;transition:opacity 0.4s ease" onload="this.style.opacity=1">
                             <span class="absolute top-3 left-3 px-2 py-0.5 border rounded-full text-[9px] font-mono font-semibold ${tagColor}">
                                 ${tagText}
                             </span>
@@ -4142,30 +4142,41 @@ class TileStitcher:
 
         function updateLightboxContent() {
             const item = lightboxImages[currentImageIndex];
-            const src = item.thumbnail;
-            const cached = lightboxImageCache.get(src);
+            const thumbSrc = item.thumbnail;
+            const originalSrc = item.original || item.thumbnail;
+            const cachedOriginal = lightboxImageCache.get(originalSrc);
             
-            // Loading spinner trigger
-            if (cached && cached.complete) {
+            if (cachedOriginal && cachedOriginal.complete && cachedOriginal.naturalWidth > 0) {
                 spinner.classList.add('hidden');
                 lightboxImg.classList.remove('opacity-30');
+                lightboxImg.style.filter = '';
+                lightboxImg.src = originalSrc;
             } else {
-                spinner.classList.remove('hidden');
-                lightboxImg.classList.add('opacity-30');
+                lightboxImg.src = thumbSrc;
+                lightboxImg.style.filter = 'blur(8px)';
+                lightboxImg.classList.remove('opacity-30');
+                spinner.classList.add('hidden');
+                
+                const hiRes = new Image();
+                hiRes.onload = function() {
+                    if (lightboxImages[currentImageIndex] === item) {
+                        lightboxImg.src = originalSrc;
+                        lightboxImg.style.filter = '';
+                    }
+                };
+                hiRes.src = originalSrc;
+                lightboxImageCache.set(originalSrc, hiRes);
             }
             
-            lightboxImg.onload = function() {
-                spinner.classList.add('hidden');
-                lightboxImg.classList.remove('opacity-30');
-            };
-            lightboxImg.src = src;
             preloadLightboxAround(currentImageIndex);
             
             document.getElementById('lightbox-title').innerText = currentLang === 'zh' ? (item.title_zh || "高清晰设计图纸") : (item.title_en || "Blueprint Sheet");
             document.getElementById('lightbox-counter').innerText = `${currentImageIndex + 1} / ${lightboxImages.length}`;
         }
 
-        function preloadLightboxImage(src) {
+        function preloadLightboxImage(item) {
+            if (!item) return;
+            const src = item.original || item.thumbnail;
             if (!src || lightboxImageCache.has(src)) return;
             const img = new Image();
             img.decoding = 'async';
@@ -4181,17 +4192,17 @@ class TileStitcher:
             if (!lightboxImages.length) return;
             const isSmallScreen = window.innerWidth < 768;
             const priorityOffsets = isSmallScreen ? [0, 1] : [0, 1, -1, 2, -2];
-            const idleOffsets = isSmallScreen ? [-1, 2] : [3, -3];
+            const idleOffsets = isSmallScreen ? [-1, 2] : [3, -3, 4, -4];
 
             priorityOffsets.forEach(offset => {
                 const item = lightboxImages[index + offset];
-                if (item) preloadLightboxImage(item.thumbnail);
+                if (item) preloadLightboxImage(item);
             });
 
             const preloadIdle = () => {
                 idleOffsets.forEach(offset => {
                     const item = lightboxImages[index + offset];
-                    if (item) preloadLightboxImage(item.thumbnail);
+                    if (item) preloadLightboxImage(item);
                 });
             };
             if ('requestIdleCallback' in window) {
