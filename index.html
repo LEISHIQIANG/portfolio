@@ -1182,8 +1182,9 @@
         }
 
         body.light-theme nav a[download] {
-            border-color: var(--lt-border) !important;
-            color: var(--lt-muted) !important;
+            border-color: var(--lt-ink) !important;
+            background: var(--lt-ink) !important;
+            color: #ffffff !important;
         }
         body.light-theme nav a[download]:hover {
             background: var(--lt-ink) !important;
@@ -1193,6 +1194,9 @@
         body.light-theme #contact a[download] {
             background: var(--lt-ink) !important;
             border: 1px solid var(--lt-ink) !important;
+            color: #ffffff !important;
+        }
+        body.light-theme #contact a[download] span {
             color: #ffffff !important;
         }
         body.light-theme #contact a[download]:hover {
@@ -1276,6 +1280,10 @@
         body.light-theme .interactive-console-pane .text-emerald-400 { color: #34d399 !important; }
         body.light-theme .interactive-console-pane .text-cyan-400 { color: #22d3ee !important; }
         body.light-theme .interactive-console-pane .text-rose-400 { color: #fb7185 !important; }
+
+        body:not(.light-theme) .wechat-qr {
+            filter: invert(1);
+        }
     </style>
 </head>
 <body class="antialiased selection:bg-indigo-500 selection:text-white bg-grid">
@@ -2542,16 +2550,8 @@
                                 </div>
                             </div>
                             
-                            <div class="p-4 bg-white/5 border border-white/5 rounded-2xl flex items-center space-x-4">
-                                <div class="h-10 w-10 rounded-full bg-indigo-500/10 flex items-center justify-center text-indigo-400">
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
-                                </div>
-                                <div>
-                                    <p class="text-[10px] text-gray-500 font-mono">WECHAT / QQ</p>
-                                    <button onclick="copyToClipboard('3184854661')" class="text-sm font-semibold hover:text-indigo-400 transition-colors focus:outline-none select-text cursor-pointer">
-                                        3184854661 <span class="text-[9px] text-indigo-500 font-normal ml-1" data-zh="复制" data-en="Copy">复制</span>
-                                    </button>
-                                </div>
+                            <div class="p-4 bg-white/5 border border-white/5 rounded-2xl flex items-center justify-center">
+                                <img src="thumbs/微信.jpg" alt="微信二维码" class="wechat-qr w-24 h-24 rounded-lg object-cover cursor-pointer hover:opacity-80 transition-opacity" onclick="openLightbox([{original:'thumbs/微信.jpg',thumbnail:'thumbs/微信.jpg',title_zh:'微信二维码',title_en:'WeChat QR Code'}], 0)">
                             </div>
                         </div>
                     </div>
