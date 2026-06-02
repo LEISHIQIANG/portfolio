@@ -980,6 +980,302 @@
             color: #f8fafc;
             -webkit-text-fill-color: transparent;
         }
+
+        /* ═══════════════════════════════════════════════════════
+           LIGHT THEME — MINIMAL ARCHITECTURAL PALETTE
+           Palette: ink #1a1a1a · muted #6b6b6b · accent #3d3d3d
+           ═══════════════════════════════════════════════════════ */
+        body.light-theme {
+            --lt-ink: #1a1a1a;
+            --lt-muted: #6b6b6b;
+            --lt-soft: #999999;
+            --lt-accent: #3d3d3d;
+            --lt-bg: #f5f4f0;
+            --lt-card: rgba(255, 255, 255, 0.7);
+            --lt-border: rgba(0, 0, 0, 0.08);
+            background-color: var(--lt-bg) !important;
+            color: var(--lt-ink) !important;
+        }
+
+        body.light-theme.bg-grid {
+            background-image:
+                radial-gradient(circle at 50% 30%, #faf9f6 0%, #f5f4f0 50%, #eeedea 100%),
+                linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+                linear-gradient(to right, rgba(0, 0, 0, 0.01) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(0, 0, 0, 0.01) 1px, transparent 1px) !important;
+        }
+
+        body.light-theme .light-glow { display: none !important; }
+
+        body.light-theme .glass-nav {
+            background: rgba(245, 244, 240, 0.85) !important;
+            border-bottom: 1px solid var(--lt-border) !important;
+        }
+
+        body.light-theme nav .font-outfit {
+            background: none !important;
+            -webkit-background-clip: initial !important;
+            background-clip: initial !important;
+            color: var(--lt-ink) !important;
+            -webkit-text-fill-color: var(--lt-ink) !important;
+        }
+
+        body.light-theme h1,
+        body.light-theme h2,
+        body.light-theme h3,
+        body.light-theme h4,
+        body.light-theme h5,
+        body.light-theme h6,
+        body.light-theme .text-white,
+        body.light-theme .dark-title {
+            color: var(--lt-ink) !important;
+        }
+
+        body.light-theme p,
+        body.light-theme .text-gray-300,
+        body.light-theme .text-gray-400,
+        body.light-theme .text-gray-500,
+        body.light-theme .dark-desc {
+            color: var(--lt-muted) !important;
+        }
+
+        body.light-theme .text-gray-600 {
+            color: var(--lt-soft) !important;
+        }
+
+        body.light-theme .nav-link {
+            color: var(--lt-muted) !important;
+        }
+        body.light-theme .nav-link:hover {
+            color: var(--lt-ink) !important;
+        }
+
+        body.light-theme .glass-card {
+            background: var(--lt-card) !important;
+            border: 1px solid var(--lt-border) !important;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04) !important;
+            color: var(--lt-ink) !important;
+        }
+        body.light-theme .glass-card:hover {
+            background: rgba(255, 255, 255, 0.85) !important;
+            border-color: rgba(0, 0, 0, 0.15) !important;
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06) !important;
+        }
+        body.light-theme .glass-card:hover .glow-sphere { opacity: 0.04 !important; }
+
+        body.light-theme .text-indigo-400,
+        body.light-theme .text-indigo-300,
+        body.light-theme .text-cyan-400,
+        body.light-theme .text-cyan-300,
+        body.light-theme .text-emerald-400,
+        body.light-theme .badge-title {
+            color: var(--lt-accent) !important;
+        }
+
+        body.light-theme .bg-indigo-500\/10,
+        body.light-theme .bg-cyan-500\/10,
+        body.light-theme .bg-emerald-500\/10,
+        body.light-theme .bg-white\/5 {
+            background-color: rgba(0, 0, 0, 0.03) !important;
+        }
+
+        body.light-theme .border-indigo-500\/20,
+        body.light-theme .border-indigo-500\/30,
+        body.light-theme .border-cyan-500\/20,
+        body.light-theme .border-cyan-500\/30,
+        body.light-theme .border-emerald-500\/20 {
+            border-color: rgba(0, 0, 0, 0.1) !important;
+        }
+
+        body.light-theme .h-full.bg-indigo-500,
+        body.light-theme .h-full.bg-cyan-500 {
+            background: var(--lt-accent) !important;
+        }
+
+        body.light-theme .notch-block.active-indigo,
+        body.light-theme .notch-block.active-emerald {
+            background: var(--lt-accent) !important;
+            box-shadow: none !important;
+        }
+        body.light-theme .notch-block.inactive {
+            background: rgba(0, 0, 0, 0.06) !important;
+        }
+
+        body.light-theme a.bg-gradient-to-r,
+        body.light-theme .bg-gradient-to-r.from-indigo-500,
+        body.light-theme .bg-indigo-500 {
+            background: var(--lt-ink) !important;
+            color: #ffffff !important;
+            border: none !important;
+            box-shadow: none !important;
+        }
+
+        body.light-theme a.bg-white\/5,
+        body.light-theme button.bg-white\/5 {
+            background: rgba(255, 255, 255, 0.6) !important;
+            border-color: var(--lt-border) !important;
+            color: var(--lt-ink) !important;
+        }
+
+        body.light-theme button,
+        body.light-theme .skill-filter-btn,
+        body.light-theme .filter-tag {
+            color: var(--lt-muted) !important;
+            border-color: var(--lt-border) !important;
+        }
+        body.light-theme .skill-filter-btn.active,
+        body.light-theme .filter-tag.active,
+        body.light-theme .filter-tag.bg-indigo-500 {
+            background: var(--lt-ink) !important;
+            color: #ffffff !important;
+            border-color: var(--lt-ink) !important;
+            box-shadow: none !important;
+        }
+
+        body.light-theme .company-stats-panel,
+        body.light-theme .company-metric-card {
+            background: rgba(255, 255, 255, 0.5) !important;
+            border-color: var(--lt-border) !important;
+            box-shadow: none !important;
+        }
+
+        body.light-theme .glass-card .text-lg.font-mono.text-indigo-400,
+        body.light-theme .glass-card .text-xl.font-bold.text-indigo-300,
+        body.light-theme .glass-card .text-xl.font-bold.text-cyan-300,
+        body.light-theme .company-metric-card .text-indigo-300,
+        body.light-theme .company-metric-card .text-cyan-300 {
+            background: transparent !important;
+            border-color: transparent !important;
+            color: var(--lt-accent) !important;
+        }
+
+        body.light-theme .photo-overlay-badge {
+            background: rgba(255, 255, 255, 0.85) !important;
+            border-color: var(--lt-border) !important;
+            box-shadow: none !important;
+        }
+        body.light-theme .photo-overlay-badge p {
+            color: var(--lt-ink) !important;
+        }
+        body.light-theme .photo-overlay-badge .badge-title {
+            color: var(--lt-accent) !important;
+        }
+
+        body.light-theme #courses-tags-container span {
+            background: rgba(0, 0, 0, 0.03) !important;
+            border-color: var(--lt-border) !important;
+            color: var(--lt-ink) !important;
+        }
+
+        body.light-theme #contact .bg-white\/5,
+        body.light-theme #contact .bg-black\/30 {
+            background: rgba(0, 0, 0, 0.02) !important;
+            border-color: var(--lt-border) !important;
+        }
+        body.light-theme #contact .text-indigo-400,
+        body.light-theme #contact .text-indigo-300 {
+            color: var(--lt-accent) !important;
+        }
+        body.light-theme #contact .text-white {
+            color: var(--lt-ink) !important;
+        }
+
+        body.light-theme nav a[download] {
+            border-color: var(--lt-border) !important;
+            color: var(--lt-muted) !important;
+        }
+        body.light-theme nav a[download]:hover {
+            background: var(--lt-ink) !important;
+            border-color: var(--lt-ink) !important;
+            color: #ffffff !important;
+        }
+        body.light-theme #contact a[download] {
+            background: var(--lt-ink) !important;
+            border: 1px solid var(--lt-ink) !important;
+            color: #ffffff !important;
+        }
+        body.light-theme #contact a[download]:hover {
+            background: #333333 !important;
+            border-color: #333333 !important;
+        }
+
+        body.light-theme #tool-menu .tool-btn {
+            background: rgba(0, 0, 0, 0.02) !important;
+            border-color: var(--lt-border) !important;
+            color: var(--lt-muted) !important;
+        }
+        body.light-theme #tool-menu .tool-btn.active-tool {
+            background: var(--lt-ink) !important;
+            border-color: var(--lt-ink) !important;
+            color: #ffffff !important;
+        }
+        body.light-theme #tool-menu .tool-btn .text-white {
+            color: var(--lt-ink) !important;
+        }
+        body.light-theme #tool-menu .tool-btn.active-tool .text-white {
+            color: #ffffff !important;
+        }
+
+        body.light-theme .glass-card .text-rose-400 {
+            color: #8b4a52 !important;
+            background-color: rgba(139, 74, 82, 0.05) !important;
+            border-color: rgba(139, 74, 82, 0.12) !important;
+        }
+        body.light-theme .glass-card .text-indigo-400 {
+            background-color: rgba(0, 0, 0, 0.03) !important;
+            border-color: rgba(0, 0, 0, 0.08) !important;
+        }
+
+        body.light-theme .bg-black\/60,
+        body.light-theme .bg-black\/70 {
+            background-color: var(--lt-ink) !important;
+            color: #ffffff !important;
+        }
+
+        body.light-theme .compare-handle::before {
+            background: var(--lt-accent) !important;
+            box-shadow: none !important;
+        }
+        body.light-theme .compare-handle div {
+            background: #ffffff !important;
+            border-color: var(--lt-accent) !important;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+        }
+        body.light-theme .compare-handle svg,
+        body.light-theme [data-compare] .text-cyan-400,
+        body.light-theme [data-compare] .text-emerald-400 {
+            color: var(--lt-accent) !important;
+            stroke: currentColor !important;
+        }
+        body.light-theme [data-compare] .bg-black\/70 {
+            background-color: rgba(255, 255, 255, 0.85) !important;
+            color: var(--lt-ink) !important;
+            border-color: var(--lt-border) !important;
+            box-shadow: none !important;
+        }
+        body.light-theme [data-compare],
+        body.light-theme .compare-original,
+        body.light-theme .compare-ai {
+            background-color: #faf9f6 !important;
+        }
+
+        body.light-theme .interactive-console-pane {
+            border-color: rgba(255, 255, 255, 0.1) !important;
+        }
+        body.light-theme .interactive-console-pane #code-content,
+        body.light-theme .interactive-console-pane pre {
+            color: #e5e7eb !important;
+        }
+        body.light-theme .interactive-console-pane #code-line-numbers div {
+            color: #4b5563 !important;
+        }
+        body.light-theme .interactive-console-pane .text-gray-300 { color: #d1d5db !important; }
+        body.light-theme .interactive-console-pane .text-gray-400 { color: #9ca3af !important; }
+        body.light-theme .interactive-console-pane .text-gray-600 { color: #4b5563 !important; }
+        body.light-theme .interactive-console-pane .text-emerald-400 { color: #34d399 !important; }
+        body.light-theme .interactive-console-pane .text-cyan-400 { color: #22d3ee !important; }
+        body.light-theme .interactive-console-pane .text-rose-400 { color: #fb7185 !important; }
     </style>
 </head>
 <body class="antialiased selection:bg-indigo-500 selection:text-white bg-grid">
@@ -1006,7 +1302,7 @@
         <div class="flex items-center space-x-3">
             <span class="font-outfit text-xl font-bold tracking-widest bg-gradient-to-r from-white via-gray-300 to-gray-500 bg-clip-text text-transparent">PRESCOTT.L</span>
             <span class="h-4 w-px bg-white/20 hidden sm:inline-block"></span>
-            <span class="text-xs text-gray-400 font-light tracking-wide uppercase hidden sm:inline-block" data-zh="建筑设计师 · AI/数字化转型辅助" data-en="Architectural Designer · AI/Digital Empowerment">建筑设计师 · AI/数字化转型辅助</span>
+            <span class="text-xs text-gray-400 font-light tracking-wide uppercase hidden sm:inline-block" data-zh="建筑设计师" data-en="Architectural Designer">建筑设计师</span>
         </div>
         
         <!-- Center Nav links -->
@@ -1048,9 +1344,8 @@
                     Prescott Nathan <br>
                     <span class="text-white transition-colors duration-500">雷事强</span>
                 </h1>
-                <p class="font-outfit text-base sm:text-2xl text-gray-400 font-light mb-6 border-l-2 border-indigo-500/50 pl-4 leading-relaxed" data-zh="建筑设计助理 / 建筑设计师 (AI数字化转型)" data-en="Architectural Design Assistant (AI &amp; Digital-Empowered)">
-                    建筑设计助理 / 建筑设计师 (AI数字化转型)<br>
-                    (Architectural Design Assistant - AI/Digital Empowered)
+                <p class="font-outfit text-base sm:text-2xl text-gray-400 font-light mb-6 border-l-2 border-indigo-500/50 pl-4 leading-relaxed" data-zh="建筑设计助理 / 建筑设计师" data-en="Architectural Design Assistant">
+                    建筑设计助理 / 建筑设计师
                 </p>
                 <div class="flex flex-wrap items-center gap-1.5 sm:gap-2 mb-6">
                     <span class="px-2.5 sm:px-3 py-1 bg-white/5 border border-white/10 rounded-full text-[11px] sm:text-xs text-gray-400 font-mono" data-zh="年龄 24" data-en="Age 24">年龄 24</span>
@@ -1058,8 +1353,8 @@
                     <span class="px-2.5 sm:px-3 py-1 bg-white/5 border border-white/10 rounded-full text-[11px] sm:text-xs text-gray-400 font-mono" data-zh="2025 年毕业" data-en="Grad. 2025">2025 年毕业</span>
                     <span class="px-2.5 sm:px-3 py-1 bg-white/5 border border-white/10 rounded-full text-[11px] sm:text-xs text-gray-400 font-mono" data-zh="四川成都" data-en="Chengdu, Sichuan">四川成都</span>
                 </div>
-                <p class="text-gray-400 text-sm md:text-base leading-relaxed max-w-xl mb-8" data-zh="四川大学锦城学院建筑学（五年制本科）毕业，专业成绩前5%。拥有1年建筑设计助理工作经验，深度参与住宅与公建的方案设计、总图强排、日照分析及报规文本编制。同时，擅长将 AI 大模型、Python 自动化及 C# 二次开发插件应用于日常工作中，成倍提升排版、建模、出图与资料搜集的效率，用数字化工具赋能高品质空间设计。" data-en="Graduated in Architecture (5-year) from Jincheng College of Sichuan University, top 5% in class. 1 year of full-time experience as an architectural assistant, deeply involved in schematic design, site planning, solar analysis, and regulatory reports. Highly proficient in leveraging AI models, Python automation, and C# CAD plugins to exponentially accelerate drafting, layout, and visualization workflows.">
-                    四川大学锦城学院建筑学（五年制本科）毕业，专业成绩前5%。拥有1年建筑设计助理工作经验，深度参与住宅与公建的方案设计、总图强排、日照分析及报规文本编制。同时，擅长将 AI 大模型、Python 自动化及 C# 二次开发插件应用于日常工作中，成倍提升排版、建模、出图与资料搜集的效率，用数字化工具赋能高品质空间设计。
+                <p class="text-gray-400 text-sm md:text-base leading-relaxed max-w-xl mb-8" data-zh="5 年制建筑学背景，主修住宅与公建的方案设计，累计参与5个住宅项目 (总建面约350亩) 报规工作，18个住宅强排项目，2个城市规划项目，5个公建项目，4个投标项目。熟悉总图强排、日照分析到规划审批的全链路流程。擅长用 AI 工具压缩设计前期重复劳动，曾用 Python 自动化方案指标核算，把单项目 3 小时工作量压到 1 小时。熟悉成都和新疆地区住宅报规要点，能辅助对接规划局全流程。业余持续探索 AI 在建筑设计中的应用，自研过多个跑通的小工具，已稳定用于实际项目。求职意向：建筑设计师助理。" data-en="5-year architecture background, specializing in residential and public building design. Participated in 5 residential projects (~350 mu total) for regulatory approval, 18 residential site layout projects, 2 urban planning projects, 5 public building projects, and 4 competition bids. Experienced in the full workflow from site layout and solar analysis to planning approval. Skilled at using AI tools to reduce repetitive early-phase work — automated indicator calculations with Python, cutting per-project workload from 3 hours to 1 hour. Familiar with residential planning codes in Chengdu and Xinjiang, able to assist in coordinating with planning bureaus. Continuously exploring AI in architecture, developed multiple working tools now in stable use on real projects. Seeking: Architectural Design Assistant.">
+                    5 年制建筑学背景，主修住宅与公建的方案设计，累计参与5个住宅项目 (总建面约350亩) 报规工作，18个住宅强排项目，2个城市规划项目，5个公建项目，4个投标项目。熟悉总图强排、日照分析到规划审批的全链路流程。擅长用 AI 工具压缩设计前期重复劳动，曾用 Python 自动化方案指标核算，把单项目 3 小时工作量压到 1 小时。熟悉成都和新疆地区住宅报规要点，能辅助对接规划局全流程。业余持续探索 AI 在建筑设计中的应用，自研过多个跑通的小工具，已稳定用于实际项目。求职意向：建筑设计师助理。
                 </p>
                 <div class="flex flex-wrap gap-4">
                     <a onclick="lenis.scrollTo('#work')" class="px-8 py-3.5 bg-gradient-to-r from-indigo-500 to-indigo-600 text-white rounded-full font-medium hover:scale-105 hover:shadow-lg hover:shadow-indigo-500/20 active:scale-95 transition-all text-sm cursor-pointer" data-zh="探索作品" data-en="Explore Work">探索作品</a>
@@ -1172,8 +1467,8 @@
                         <div class="glow-sphere glow-emerald"></div>
                         <div class="flex justify-between items-center">
                             <div>
-                                <h4 class="text-base font-bold text-white transition-colors group-hover:text-indigo-400 dark-title" data-zh="Rhino & Grasshopper 参数化建模" data-en="Rhino & Grasshopper Computational Design">Rhino & Grasshopper Computational Design</h4>
-                                <p class="text-xs text-gray-500 font-mono mt-0.5" data-zh="复杂异型曲面建模、参数化几何逻辑" data-en="Complex curved surface generation, parameter logic">复杂异型曲面建模、参数化几何逻辑</p>
+                                <h4 class="text-base font-bold text-white transition-colors group-hover:text-indigo-400 dark-title" data-zh="Rhino & Grasshopper 参数化设计与形态推敲" data-en="Rhino & Grasshopper Computational Design">Rhino & Grasshopper 参数化设计与形态推敲</h4>
+                                <p class="text-xs text-gray-500 font-mono mt-0.5" data-zh="复杂曲面生成、参数化形态控制" data-en="Complex curved surface generation, parameter logic">复杂曲面生成、参数化形态控制</p>
                             </div>
                             <span class="text-lg font-mono font-bold text-indigo-400">6.2 / 10</span>
                         </div>
@@ -1195,7 +1490,7 @@
                             <span class="px-2 py-0.5 rounded text-[10px] font-mono border border-emerald-500/20 bg-emerald-500/5 text-emerald-400">#异型曲面</span>
                             <span class="px-2 py-0.5 rounded text-[10px] font-mono border border-emerald-500/20 bg-emerald-500/5 text-emerald-400">#几何逻辑</span>
                         </div>
-                        <p class="text-xs text-gray-400 font-light leading-relaxed dark-desc" data-zh="应对复杂外立面与流动曲面造型，结合参数化节点工具建立可调节的幕墙及结构体量推敲逻辑。" data-en="Utilizes parametric logics to generate and control complex facade grids, paneling systems, and complex architectural shells.">应对复杂外立面与流动曲面造型，结合参数化节点工具建立可调节的幕墙及结构体量推敲逻辑。</p>
+                        <p class="text-xs text-gray-400 font-light leading-relaxed dark-desc" data-zh="应对复杂立面与曲面造型，借助 Grasshopper 参数化逻辑建立可调的形态生成与控制体系。" data-en="Utilizes parametric logics to generate and control complex facade grids, paneling systems, and complex architectural shells.">应对复杂立面与曲面造型，借助 Grasshopper 参数化逻辑建立可调的形态生成与控制体系。</p>
                     </div>
 
                     <!-- Revit Card -->
@@ -1473,7 +1768,7 @@
                             </div>
                             <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
                                 <div class="company-metric-card rounded-xl p-3">
-                                    <p class="text-xl font-bold text-indigo-300">7</p>
+                                    <p class="text-xl font-bold text-indigo-300">29</p>
                                     <p class="text-[10px] text-gray-500 font-mono mt-1" data-zh="项目条目" data-en="Project Items">项目条目</p>
                                 </div>
                                 <div class="company-metric-card rounded-xl p-3">
@@ -1552,12 +1847,12 @@
                             <div class="pt-2 border-t border-white/5">
                                 <h4 class="text-xs font-semibold tracking-wider text-indigo-400 mb-3" data-zh="常用工具链" data-en="Toolchain">常用工具链</h4>
                                 <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 text-center">
-                                    <span class="rounded-lg bg-black/20 border border-white/5 px-2 py-1.5 text-[10px] text-gray-400 font-mono">AutoCAD</span>
-                                    <span class="rounded-lg bg-black/20 border border-white/5 px-2 py-1.5 text-[10px] text-gray-400 font-mono">SketchUp</span>
-                                    <span class="rounded-lg bg-black/20 border border-white/5 px-2 py-1.5 text-[10px] text-gray-400 font-mono">Revit</span>
-                                    <span class="rounded-lg bg-black/20 border border-white/5 px-2 py-1.5 text-[10px] text-gray-400 font-mono">Photoshop</span>
-                                    <span class="rounded-lg bg-black/20 border border-white/5 px-2 py-1.5 text-[10px] text-gray-400 font-mono">PPT</span>
-                                    <span class="rounded-lg bg-black/20 border border-white/5 px-2 py-1.5 text-[10px] text-gray-400 font-mono">AI</span>
+                                    <span class="rounded-lg bg-indigo-500/10 border border-indigo-500/20 px-2 py-1.5 text-[10px] text-indigo-300 font-mono">AutoCAD</span>
+                                    <span class="rounded-lg bg-indigo-500/10 border border-indigo-500/20 px-2 py-1.5 text-[10px] text-indigo-300 font-mono">SketchUp</span>
+                                    <span class="rounded-lg bg-indigo-500/10 border border-indigo-500/20 px-2 py-1.5 text-[10px] text-indigo-300 font-mono">Revit</span>
+                                    <span class="rounded-lg bg-indigo-500/10 border border-indigo-500/20 px-2 py-1.5 text-[10px] text-indigo-300 font-mono">Photoshop</span>
+                                    <span class="rounded-lg bg-indigo-500/10 border border-indigo-500/20 px-2 py-1.5 text-[10px] text-indigo-300 font-mono">PPT</span>
+                                    <span class="rounded-lg bg-indigo-500/10 border border-indigo-500/20 px-2 py-1.5 text-[10px] text-indigo-300 font-mono">AI</span>
                                 </div>
                             </div>
                         </div>
@@ -1575,7 +1870,7 @@
                                 <p class="text-sm text-gray-400 mt-2 max-w-2xl" data-zh="覆盖住宅强排、报规文本、户型表达与技术图纸，展示从指标推敲到成果交付的完整方案阶段能力。" data-en="Residential density studies, submission packages, unit plan graphics, and technical sheets showing a complete schematic-to-approval workflow.">覆盖住宅强排、报规文本、户型表达与技术图纸，展示从指标推敲到成果交付的完整方案阶段能力。</p>
                             </div>
                             <div class="grid grid-cols-3 gap-2 text-center min-w-0 sm:min-w-[260px]">
-                                <div class="company-metric-card rounded-lg px-3 py-2"><p class="text-lg font-bold text-indigo-300">7</p><p class="text-[9px] text-gray-500 font-mono" data-zh="项目" data-en="Projects">项目</p></div>
+                                <div class="company-metric-card rounded-lg px-3 py-2"><p class="text-lg font-bold text-indigo-300">29</p><p class="text-[9px] text-gray-500 font-mono" data-zh="项目" data-en="Projects">项目</p></div>
                                 <div class="company-metric-card rounded-lg px-3 py-2"><p class="text-lg font-bold text-indigo-300">31</p><p class="text-[9px] text-gray-500 font-mono" data-zh="图纸" data-en="Sheets">图纸</p></div>
                                 <div class="company-metric-card rounded-lg px-3 py-2"><p class="text-lg font-bold text-indigo-300">4</p><p class="text-[9px] text-gray-500 font-mono" data-zh="类型" data-en="Types">类型</p></div>
                             </div>
@@ -1622,8 +1917,8 @@
                             </div>
                             <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
                                 <div class="company-metric-card rounded-xl p-3">
-                                    <p class="text-xl font-bold text-cyan-300">3</p>
-                                    <p class="text-[10px] text-gray-500 font-mono mt-1" data-zh="项目方向" data-en="Project Tracks">项目方向</p>
+                                    <p class="text-xl font-bold text-cyan-300">5</p>
+                                    <p class="text-[10px] text-gray-500 font-mono mt-1" data-zh="项目条目" data-en="Project Items">项目条目</p>
                                 </div>
                                 <div class="company-metric-card rounded-xl p-3">
                                     <p class="text-xl font-bold text-cyan-300">14</p>
@@ -1701,12 +1996,12 @@
                             <div class="pt-2 border-t border-white/5">
                                 <h4 class="text-xs font-semibold tracking-wider text-cyan-400 mb-3" data-zh="协同工具链" data-en="Collaboration Toolchain">协同工具链</h4>
                                 <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 text-center">
-                                    <span class="rounded-lg bg-black/20 border border-white/5 px-2 py-1.5 text-[10px] text-gray-400 font-mono">Rhino</span>
-                                    <span class="rounded-lg bg-black/20 border border-white/5 px-2 py-1.5 text-[10px] text-gray-400 font-mono">SketchUp</span>
-                                    <span class="rounded-lg bg-black/20 border border-white/5 px-2 py-1.5 text-[10px] text-gray-400 font-mono">AutoCAD</span>
-                                    <span class="rounded-lg bg-black/20 border border-white/5 px-2 py-1.5 text-[10px] text-gray-400 font-mono">Photoshop</span>
-                                    <span class="rounded-lg bg-black/20 border border-white/5 px-2 py-1.5 text-[10px] text-gray-400 font-mono">PowerPoint</span>
-                                    <span class="rounded-lg bg-black/20 border border-white/5 px-2 py-1.5 text-[10px] text-gray-400 font-mono">D5</span>
+                                    <span class="rounded-lg bg-cyan-500/10 border border-cyan-500/20 px-2 py-1.5 text-[10px] text-cyan-300 font-mono">Rhino</span>
+                                    <span class="rounded-lg bg-cyan-500/10 border border-cyan-500/20 px-2 py-1.5 text-[10px] text-cyan-300 font-mono">SketchUp</span>
+                                    <span class="rounded-lg bg-cyan-500/10 border border-cyan-500/20 px-2 py-1.5 text-[10px] text-cyan-300 font-mono">AutoCAD</span>
+                                    <span class="rounded-lg bg-cyan-500/10 border border-cyan-500/20 px-2 py-1.5 text-[10px] text-cyan-300 font-mono">Photoshop</span>
+                                    <span class="rounded-lg bg-cyan-500/10 border border-cyan-500/20 px-2 py-1.5 text-[10px] text-cyan-300 font-mono">PowerPoint</span>
+                                    <span class="rounded-lg bg-cyan-500/10 border border-cyan-500/20 px-2 py-1.5 text-[10px] text-cyan-300 font-mono">D5</span>
                                 </div>
                             </div>
                         </div>
@@ -1724,7 +2019,7 @@
                                 <p class="text-sm text-gray-400 mt-2 max-w-2xl" data-zh="集中呈现实习期间参与的公共建筑、城市片区与规划研究成果，强调研究、建模、图面整理和汇报表达能力。" data-en="Public-building, district-planning, and urban research work from the internship period, emphasizing research, modeling, drawing cleanup, and presentation output.">集中呈现实习期间参与的公共建筑、城市片区与规划研究成果，强调研究、建模、图面整理和汇报表达能力。</p>
                             </div>
                             <div class="grid grid-cols-3 gap-2 text-center min-w-0 sm:min-w-[260px]">
-                                <div class="company-metric-card rounded-lg px-3 py-2"><p class="text-lg font-bold text-cyan-300">3</p><p class="text-[9px] text-gray-500 font-mono" data-zh="项目" data-en="Projects">项目</p></div>
+                                <div class="company-metric-card rounded-lg px-3 py-2"><p class="text-lg font-bold text-cyan-300">5</p><p class="text-[9px] text-gray-500 font-mono" data-zh="项目" data-en="Projects">项目</p></div>
                                 <div class="company-metric-card rounded-lg px-3 py-2"><p class="text-lg font-bold text-cyan-300">14</p><p class="text-[9px] text-gray-500 font-mono" data-zh="图纸" data-en="Sheets">图纸</p></div>
                                 <div class="company-metric-card rounded-lg px-3 py-2"><p class="text-lg font-bold text-cyan-300">3</p><p class="text-[9px] text-gray-500 font-mono" data-zh="类型" data-en="Types">类型</p></div>
                             </div>
